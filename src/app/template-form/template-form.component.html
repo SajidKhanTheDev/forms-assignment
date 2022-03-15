@@ -1,0 +1,47 @@
+<div class=" d-flex h-100 justify-content-center">
+    <div class=" card w-50">
+        <div class=" card-header">
+            <h5>Template Form</h5>
+        </div>
+        <div class=" card-body">
+            <form #form="ngForm" (ngSubmit)="submit(form)">
+                <div class="form-group mb-4">
+                    <input type="text" class=" form-control" name="fullname" ngModel required placeholder="Fullname"
+                        #fullname="ngModel">
+                    <span class="forError" *ngIf="fullname.errors?.['required'] && fullname.touched">Fullname Is
+                        Required !</span>
+                </div>
+                <div class="form-group mb-4">
+                    <input type="number" class=" form-control" name="mobile" ngModel required placeholder="Mobile"
+                        #Mobile="ngModel">
+                    <span class="forError" *ngIf="Mobile.errors?.['required'] && Mobile.touched">Mobile no. Is
+                        Required !</span>
+                </div>
+                <div class="form-group mb-4">
+                    <input type="email" class=" form-control" name="email" ngModel required placeholder="Email"
+                        #Email="ngModel">
+                    <span class="forError" *ngIf="Email.errors?.['required'] && Email.touched">Email no. Is Required
+                        !</span>
+                </div>
+                <div class="form-group mb-4">
+                    <input type="password" class=" form-control" name="password" ngModel required placeholder="Password"
+                        #Password="ngModel">
+                    <span class="forError" *ngIf="Password.errors?.['required'] && Password.touched">Password no. Is
+                        Required
+                        !</span>
+                </div>
+                <div class="form-group mb-4">
+                    <input type="password" class=" form-control" name="confirmPassword" ngModel required
+                        placeholder="Confirm Password" #ConfirmPassword="ngModel">
+                    <span class="forError"
+                        *ngIf="ConfirmPassword.errors?.['required'] &&ConfirmPassword.touched">Confirm password is
+                        Required
+                        !</span>
+                </div>
+                <div class="form-group mb-4">
+                    <button class=" btn btn-danger" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
